@@ -13,6 +13,7 @@ import Input from '../atoms/InputField/Input';
 import colors from '../../constants/colors';
 import NumberContainer from '../molecules/NumberContainer/NumberContainer';
 import TitleText from '../atoms/TitleText/TitleText';
+import StyledButton from '../molecules/StyledButton/StyledButton';
 
 export type StartScreenProps = {
   onStartGame?:(theNumber:number)=>void;
@@ -55,7 +56,7 @@ const StartScreen: React.FC<StartScreenProps> = ({onStartGame}) => {
       <Card style={styles.summaryContainer}>
         <TitleText>You selected</TitleText>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="START GAME" onPress={() => onStartGame!(selectedNumber)}/>
+        <StyledButton onPress={() => onStartGame!(selectedNumber)}>START GAME</StyledButton>
       </Card>
     );
   }
